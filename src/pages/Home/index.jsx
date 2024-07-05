@@ -1,9 +1,8 @@
-import Cabecera from "../../components/Cabecera";
 
-function Home(){
-    return(
+function Home() {
+    return (
         <main>
-            <Cabecera/>
+            
         </main>
     )
 }
