@@ -1,0 +1,13 @@
+.frontEndContainerVideos{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(50px, 430px));
+    gap: 30px;
+    padding: 30px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.frontEnd{
+    width: max-content;
+}

@@ -1,10 +1,13 @@
 import './Pie.module.css';
 import logo from "../../assets/Logo.png";
+import { Link } from 'react-router-dom';
 
-function Pie(){
-    return(
+function Pie() {
+    return (
         <footer>
-            <img src={logo} alt='Logo'/>
+            <Link to='/'>
+                <img src={logo} alt='Logo' />
+            </Link>
         </footer>
     )
 }
