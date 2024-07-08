@@ -22,38 +22,29 @@ function Body() {
 
     return (<>
         <div className={styles.frontEndContainer}>
-            <h1>Front End</h1>
+            <h1>FRONT END</h1>
             <div className={styles.frontEndContainerVideos}>
                 {
                     filteredFrontEnd.map((item, index) => (
-                        <div className={styles.frontEnd} key={index}>
-                            <Card key={index} id={index} imagen={item.photo} link={item.link}></Card>
-                        </div>
-
+                        <Card key={index} id={index} imagen={item.photo} link={item.link} />
                     ))}
             </div>
         </div>
         <div className={styles.frontEndContainer}>
-            <h1>Back End</h1>
+            <h1>BACK END</h1>
             <div className={styles.frontEndContainerVideos}>
                 {
                     filteredBackEnd.map((item, index) => (
-                        <div className={styles.frontEnd} key={index}>
-                            <Card key={index} id={index} imagen={item.photo} link={item.link}></Card>
-                        </div>
-
+                        <Card key={index} id={index} imagen={item.photo} link={item.link} />
                     ))}
             </div>
         </div>
         <div className={styles.frontEndContainer}>
-            <h1>Inovación y Gestión</h1>
+            <h1>INNOVACIÓN Y GESTIÓN</h1>
             <div className={styles.frontEndContainerVideos}>
                 {
                     filteredInno.map((item, index) => (
-                        <div className={styles.frontEnd} key={index}>
-                            <Card key={index} id={index} imagen={item.photo} link={item.link}></Card>
-                        </div>
-
+                        <Card key={index} id={index} imagen={item.photo} link={item.link} />
                     ))}
             </div>
         </div>
