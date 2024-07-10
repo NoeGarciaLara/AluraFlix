@@ -1,0 +1,11 @@
+.titulo {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #FFFFFF;
+    background-color: var(--color-frontend);
+    width: 432px;
+    height: 70px;
+    border-radius: 20px;
+    margin: 30px;
+}

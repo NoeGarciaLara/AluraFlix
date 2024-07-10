@@ -1,0 +1,68 @@
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+
+html {
+    min-height: 100%;
+}
+
+.body {
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-blue);
+    text-shadow:
+        0 0 1ex rgb(18, 1, 255),
+        0 0 2px rgba(255, 255, 255, 0.8);
+        overflow: hidden;
+}
+
+@keyframes scan {
+    0% {
+        background-position: 0 -100vh;
+    }
+
+    35%,
+    100% {
+        background-position: 0 100vh;
+    }
+}
+
+.terminal {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 4rem;
+    text-transform: uppercase;
+}
+
+.output {
+    color: var(--color-blue);
+    text-shadow:
+        0 0 1px rgba(41, 24, 168, 0.4),
+        0 0 2px rgba(255, 255, 255, 0.8);
+        overflow: hidden;
+}
+
+.output::before {
+    content: "> ";
+}
+
+.return {
+    color: #fff;
+    text-decoration: none;
+}
+
+.return::before {
+    content: "[";
+}
+
+.return::after {
+    content: "]";
+}
+
+.errorcode {
+    color: white;
+    overflow: hidden;
+}
+
+.error{
+    overflow: hidden;
+}

@@ -3,10 +3,8 @@ import style from './TituloBanner.module.css'
 function TituloBanner({category, color}){
 
     return(
-        <div>
-            <h1>{category}</h1>
-        </div>
-    )
+            <h1 className={style.titulo}>{category}</h1>
+        )
 }
 
 export default TituloBanner

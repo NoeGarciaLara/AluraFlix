@@ -10,5 +10,59 @@
     justify-content: space-between;
     padding: 1.5rem;
     box-shadow: inset -0px 10px 15px -0px var(--color-blue);
-    filter: brightness(0.5);
-} 
+}
+
+.gradient {
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    background-color: var(--color-banner);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.containerTexto, .titulo, .parrafo {
+    color: var(--color-white-smoke);
+    background-color: transparent;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    flex-direction: column;
+    width: 100%;
+}
+.parrafo{
+    width: 90%;
+}
+
+.containerTexto{
+    margin: 30px;
+}
+
+.titulo {
+    font-size: 46px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.parrafo {
+    font-size: 18px;
+    font-weight: 100;
+
+}
+
+.containerBanner {
+    background-color: transparent;
+    width: 100%;
+    border-radius: 15px;
+    overflow-y: hidden;
+    z-index: 1;
+    margin: 30px;
+    height: 440px;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
