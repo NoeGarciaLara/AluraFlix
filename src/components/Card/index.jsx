@@ -3,7 +3,7 @@ import eliminar from "../Card/eliminar.png";
 import editar from "../Card/editar.png";
 import { useVideoContext } from '../../context';
 
-function Card({ id, imagen, link, onEdit }) {
+function Card({ id, imagen, link, category, onEdit }) {
     const { deleteVideo } = useVideoContext();
 
     const handleDelete = async (e) => {
@@ -12,7 +12,7 @@ function Card({ id, imagen, link, onEdit }) {
     };
 
     return (
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles[category.replace(/\s+/g, '').toLowerCase()]}`}>
             <a className={styles.imagen} target="_blank" rel="noopener noreferrer" href={link}>
                 <img className={styles.cardImagen} src={imagen} alt="Card" />
             </a>
@@ -21,7 +21,7 @@ function Card({ id, imagen, link, onEdit }) {
                     <img src={eliminar} alt='Boton eliminar' />
                     ELIMINAR
                 </button>
-                <button onClick={(e) => { e.stopPropagation(); onEdit({ id, imagen, link }); }}>
+                <button onClick={(e) => { e.stopPropagation(); onEdit({ id, imagen, link, category }); }}>
                     <img src={editar} alt='Boton editar' />
                     EDITAR
                 </button>

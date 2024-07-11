@@ -16,27 +16,27 @@ function Body({ onEdit }) {
 
     return (
         <>
-            <div className={styles.frontEndContainer}>
+            <div className={`${styles.frontEndContainer} ${styles.frontend}`}>
                 <h1>FRONT END</h1>
                 <div className={styles.frontEndContainerVideos}>
                     {filteredFrontEnd.map((item) => (
-                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} onEdit={onEdit} />
+                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} category={item.category} onEdit={onEdit} />
                     ))}
                 </div>
             </div>
-            <div className={styles.frontEndContainer}>
+            <div className={`${styles.frontEndContainer} ${styles.backend}`}>
                 <h1>BACK END</h1>
                 <div className={styles.frontEndContainerVideos}>
                     {filteredBackEnd.map((item) => (
-                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} onEdit={onEdit} />
+                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} category={item.category} onEdit={onEdit} />
                     ))}
                 </div>
             </div>
-            <div className={styles.frontEndContainer}>
+            <div className={`${styles.frontEndContainer} ${styles.innovaciónygestión}`}>
                 <h1>INNOVACIÓN Y GESTIÓN</h1>
                 <div className={styles.frontEndContainerVideos}>
                     {filteredInno.map((item) => (
-                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} onEdit={onEdit} />
+                        <Card key={item.id} id={item.id} imagen={item.photo} link={item.link} category={item.category} onEdit={onEdit} />
                     ))}
                 </div>
             </div>
