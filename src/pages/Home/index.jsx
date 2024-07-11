@@ -6,7 +6,7 @@ import {useVideoContext} from "../../context"
 
 function Home() {
 
-    const { updateVideo } = useVideoContext();
+    const { videos, updateVideo } = useVideoContext();
     const [currentCard, setCurrentCard] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -14,8 +14,8 @@ function Home() {
         setModalOpen(false);
     };
 
-    const handleModalSave = (updatedCard) => {
-        updateVideo(updatedCard);
+    const handleModalSave = async (updatedCard) => {
+        await updateVideo(updatedCard);
         setModalOpen(false);
     };
 
@@ -27,7 +27,7 @@ function Home() {
     return(
         <>
         <Banner/>
-        <Body onEdit={handleCardEdit}/>
+        <Body videos={videos} onEdit={handleCardEdit}/>
         <Modal
                     card={currentCard}
                     isOpen={modalOpen}

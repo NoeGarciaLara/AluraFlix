@@ -6,8 +6,10 @@ import OptionList from '../OptionList';
 import { validateForm } from '../../utils/ValidateForm';
 import FormButton from '../FormButton';
 import ConfirmationDialog from '../ConfirmationDialog';
+import { useVideoContext } from '../../context';
 
-const Modal = ({ card, isOpen, onClose, onSave }) => {
+const Modal = ({ card, isOpen, onClose }) => {
+    const { updateVideo } = useVideoContext();
     const initialFormData = useMemo(() => ({
         title: '',
         category: '',
@@ -56,9 +58,10 @@ const Modal = ({ card, isOpen, onClose, onSave }) => {
         }
     };
 
-    const handleConfirmSave = () => {
-        onSave(formData);
+    const handleConfirmSave = async () => {
+        await updateVideo(formData);
         setShowConfirmation(false);
+        onClose();
     };
 
     const handleCancelSave = () => {

@@ -25,16 +25,32 @@ export const VideoProvider = ({ children }) => {
         setVideos((prevVideos) => [...prevVideos, { ...video, id: prevVideos.length + 1 }]);
     };
 
-    const updateVideo = (updatedVideo) => {
-        setVideos((prevVideos) =>
-            prevVideos.map((video) => (video.id === updatedVideo.id ? updatedVideo : video))
-        );
+    const updateVideo = async (updatedVideo) => {
+        try {
+            const response = await fetch(`http://localhost:3000/videos/${updatedVideo.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedVideo),
+            });
+
+            if (response.ok) {
+                setVideos((prevVideos) =>
+                    prevVideos.map((video) => (video.id === updatedVideo.id ? updatedVideo : video))
+                );
+            } else {
+                console.error('Error updating video:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error updating video:', error);
+        }
     };
 
     const deleteVideo = async (videoId) => {
         try {
             const response = await fetch(`http://localhost:3000/videos/${videoId}`, {
-                method: 'DELETE'
+                method: 'DELETE',
             });
 
             if (response.ok) {
