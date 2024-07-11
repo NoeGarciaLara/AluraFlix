@@ -35,6 +35,7 @@
     border: none;
     background-color: black;
     margin: 15px;
+    cursor: pointer;
 }
 
 .botones img{

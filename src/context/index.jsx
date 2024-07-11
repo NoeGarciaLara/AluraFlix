@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 const VideoContext = createContext();
 
@@ -32,8 +31,20 @@ export const VideoProvider = ({ children }) => {
         );
     };
 
-    const deleteVideo = (videoId) => {
-        setVideos((prevVideos) => prevVideos.filter((video) => video.id !== videoId));
+    const deleteVideo = async (videoId) => {
+        try {
+            const response = await fetch(`http://localhost:3000/videos/${videoId}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                setVideos((prevVideos) => prevVideos.filter((video) => video.id !== videoId));
+            } else {
+                console.error('Error deleting video:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error deleting video:', error);
+        }
     };
 
     return (
@@ -41,9 +52,4 @@ export const VideoProvider = ({ children }) => {
             {children}
         </VideoContext.Provider>
     );
-};
-
-
-VideoProvider.propTypes = {
-    children: PropTypes.node.isRequired,
 };

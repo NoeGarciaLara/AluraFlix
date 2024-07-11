@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import style from'./Notification.module.css';
 import { BsCheckCircle } from "react-icons/bs";
 
@@ -22,16 +21,6 @@ const Notification = ({ message, onClose, color }) => {
             </div>
         </div>
     );
-};
-
-Notification.propTypes = {
-    message: PropTypes.string.isRequired,
-    onClose: PropTypes.func.isRequired,
-    color: PropTypes.string
-};
-
-Notification.defaultProps = {
-    color: 'var(--color-white)' 
 };
 
 export default Notification;

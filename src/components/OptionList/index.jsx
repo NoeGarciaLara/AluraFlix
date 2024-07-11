@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { IoMdArrowDropdown } from "react-icons/io";
 import styles from './OptionList.module.css';
 
@@ -31,7 +30,7 @@ const OptionList = ({ value, onChange, options, clase, clase2 }) => {
 
     return (
         <div className={styles.optionList} ref={dropdownRef}>
-            <label>Categoría:</label>
+            Categoría:
             <div className={styles.inputWithIcon} onClick={handleToggleDropdown}>
                 <div className={`${clase}`}>
                     {value || "Seleccionar categoría"}
@@ -53,20 +52,6 @@ const OptionList = ({ value, onChange, options, clase, clase2 }) => {
             )}
         </div>
     );
-};
-
-OptionList.propTypes = {
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    clase: PropTypes.string.isRequired,
-    clase2: PropTypes.string.isRequired,
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            primaryColor: PropTypes.string.isRequired
-        })
-    ).isRequired
 };
 
 export default OptionList;

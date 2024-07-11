@@ -3,10 +3,8 @@
     border-radius: 10px;
     background: var(--color-blue-dark);
     overflow-x: visible;
-}
-
-.optionList label {
     font-size: 1.25rem;
+    color: white;
 }
 
 .inputWithIcon {

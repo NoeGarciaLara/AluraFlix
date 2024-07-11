@@ -11,7 +11,7 @@ import ConfirmationDialog from '../../components/ConfirmationDialog';
 
 function CrearVideo() {
     const { addVideo } = useVideoContext();
-   
+
     const initialFormData = {
         title: '',
         category: '',
@@ -69,19 +69,33 @@ function CrearVideo() {
         e.preventDefault();
         await validateFormAndSetErrors();
         if (isFormFilled(formData) && Object.keys(errors).length === 0) {
-            setShowConfirmation(true); 
+            setShowConfirmation(true);
         }
     };
 
-    const handleConfirmSave = () => {
-        addVideo(formData);
-        setNotificationMessage('El video se ha guardado exitosamente.');
-        setShowConfirmation(false);
-        setShowNotification(true);
-        setTimeout(() => {
-            setShowNotification(false);
-            navigateTo('/');
-        }, 3000); 
+    const handleConfirmSave = async () => {
+        const response = await fetch('http://localhost:3000/videos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            const newVideo = await response.json();
+            addVideo(newVideo);
+            setNotificationMessage('El video se ha guardado exitosamente.');
+            setShowConfirmation(false);
+            setShowNotification(true);
+            setTimeout(() => {
+                setShowNotification(false);
+                navigateTo('/');
+            }, 3000);
+        } else {
+            setNotificationMessage('Hubo un error al guardar el video. Inténtalo nuevamente.');
+            setShowNotification(true);
+        }
     };
 
     const handleCancelSave = () => {
@@ -117,7 +131,7 @@ function CrearVideo() {
                     </div>
                     <div className={style.formSection}>
                         <div className={style.formSectionLeft}>
-                        <label className={`${style.newVideoFormLabel} ${errors.title && touchedFields.title ? style.errorLabel : ''}`}>
+                            <label className={`${style.newVideoFormLabel} ${errors.title && touchedFields.title ? style.errorLabel : ''}`}>
                                 Título:
                                 <input
                                     className={`${style.newVideoFormInput} ${errors.title && touchedFields.title ? style.error : ''}`}
