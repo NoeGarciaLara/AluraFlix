@@ -1,0 +1,163 @@
+.containerNewVideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    width: 100%;
+    max-width: 64.75rem;
+    padding: 2rem;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.newVideoHeader {
+    text-align: center;
+}
+
+.newVideoTitle {
+    font-size: 3.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.newVideoDescription {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    background-color: transparent;
+}
+
+/* FORM */
+.newVideoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 73.25rem;
+}
+
+/* SECCIÓN H2 */
+.formSection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.formSectionLeft,
+.formSectionRight {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.formSectionLeft:last-child,
+.formSectionRight:last-child {
+    margin-right: 0;
+}
+
+.newVideoFormTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* FORM FIELDS */
+.newVideoFormLabel {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 1.25rem;
+}
+
+.newVideoFormLabel.errorLabel {
+    color: var(--color-error);
+}
+
+.newVideoFormInput {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    border: 1px solid var(--color-light-gray) !important;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    min-height: 3.875rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-light-gray);
+    box-sizing: border-box;
+    resize: none;
+}
+
+.newVideoFormInput::placeholder {
+    color: var(--color-light-gray);
+}
+
+.newVideoFormOption {
+    margin-bottom: 0;
+    overflow-x: visible !important;
+}
+
+.newVideoPage * {
+    overflow-x: initial; 
+}
+
+
+.newVideoDropdownOption {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(--color-white-smoke);
+    position: relative;
+    background-color: var(--color-bg);
+    margin-top: 0;
+    overflow-x: visible;
+}
+
+.newVideoDropdownOption:hover {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+.newVideoFormInput.error::placeholder {
+    color: var(--color-error);
+}
+
+.newVideoFormInput.error {
+    border-color: var(--color-error);
+}
+
+.newVideoFormInput:focus {
+    border-color: var(--color-frontend);
+    outline: none;
+}
+
+.newVideoFormTextarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    resize: vertical;
+}
+
+.errorMessage {
+    color: var(--color-error);
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+.newVideoFormButtons {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    background: transparent;
+    width: 100%;
+    max-width: 35.813rem;
+    font-size: 1.25rem;
+}

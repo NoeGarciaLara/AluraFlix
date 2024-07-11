@@ -1,0 +1,47 @@
+
+.formButton {
+    max-width: 11.258rem;
+    max-height: 3.375rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    background: var(--color-black);
+    border-radius: 10px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.formButton--save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: var(--color-white);
+    border: 3px solid var(--color-blue-light);
+    box-shadow: inset 0 0 10px 5px var(--color-button-shadow);
+    filter: brightness(1.3);
+}
+
+.formButton--save:hover {
+    filter: brightness(1.3);
+}
+
+.formButton--cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    border: 3px solid var(--color-white);
+}
+
+.formButton--cancel:hover {
+    filter: brightness(1.3);
+}
+
+.formButton:disabled {
+    background-color: var(--color-light-gray);
+    background: transparent;
+    filter: brightness(0.8);
+    cursor: not-allowed;
+}
+

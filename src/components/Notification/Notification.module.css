@@ -1,0 +1,61 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+    width: clamp(350px, 100%, 400px);
+    height: auto;
+    color: var(--color-black);
+}
+
+.notificationContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.notificationIcons {
+    background-color: transparent;
+    margin: auto 0.5rem;
+}
+
+.notificationIcon {
+    background-color: transparent;
+    font-size: 1.9rem;
+    margin: 1rem 2rem 1rem 1rem;
+    font-weight: bold;
+    color: var(--color-backend);
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.notification p {
+    margin: 0;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.notification .closeButton {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.notification .closeButton:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .notification {
+        width: 90%;
+    }
+}
